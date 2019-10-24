@@ -10,3 +10,4 @@ public class ManageScenes : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 }
+
