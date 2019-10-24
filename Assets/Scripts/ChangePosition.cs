@@ -5,9 +5,9 @@ using UnityEngine;
 public class ChangePosition : MonoBehaviour
 {
     public Transform Target;
-    public Transform destination;
+    //public Transform destination;
     
-    public void Move()
+    public void Move(Transform destination)
     {
         Target.transform.position = destination.transform.position;
     }
