@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     GameObject target = null;
+    public Transform toFollow;
 
     void Update()
     {
