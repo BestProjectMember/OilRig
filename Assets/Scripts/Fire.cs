@@ -6,6 +6,7 @@ public class Fire : MonoBehaviour
 {
 	public ParticleSystem smoke;
 	public GameObject burningObject;
+	public GameObject snapDropZone;
 	private bool haveSmoked;
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,6 @@ public class Fire : MonoBehaviour
 
 	void OnParticleCollision(GameObject other)
 	{
-		//	if(other.gameObject.name == "Foam")
-		//	{
 		if (gameObject.transform.localScale.x > 0)
 		{
 			Debug.Log("collision enter");
@@ -34,7 +33,6 @@ public class Fire : MonoBehaviour
 			StartCoroutine("Smoke");
 			haveSmoked = true;
 		}
-	//	}
 	}
 
 	IEnumerator PutOut()
@@ -50,5 +48,6 @@ public class Fire : MonoBehaviour
 		yield return new WaitForSeconds(5f);
 		smoke.Stop();
 		burningObject.SetActive(false);
+		snapDropZone.SetActive(true);
 	}
 }
