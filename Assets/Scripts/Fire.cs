@@ -7,7 +7,6 @@ public class Fire : MonoBehaviour
 	public ParticleSystem smoke;
 	public GameObject snapDropZone;
 	public GameObject burningObject;
-	public Rigidbody burningObjectRigidbody;
 	private bool haveSmoked;
 	public bool objectThrowable;
 
@@ -16,13 +15,12 @@ public class Fire : MonoBehaviour
     {
 		haveSmoked = false;
 		objectThrowable = false;
-		burningObjectRigidbody.isKinematic = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-	//	gameObject.transform.position = Vector3.Lerp(transform.position,burningObject.transform.position,Time.time);
+		gameObject.transform.position = new Vector3(burningObject.transform.position.x + 2f, burningObject.transform.position.y, burningObject.transform.position.z + 0.2f);
     }
 
 	void OnParticleCollision(GameObject other)
@@ -50,7 +48,6 @@ public class Fire : MonoBehaviour
 		smoke.Play();
 		yield return new WaitForSeconds(5f);
 		smoke.Stop();
-	//	burningObjectRigidbody.isKinematic = !burningObjectRigidbody.isKinematic;
 		objectThrowable = true;
 	}
 }
