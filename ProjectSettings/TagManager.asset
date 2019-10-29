@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Fire
   - Foam
+  - Balloon
+  - Water
+  - ExplodingBox
+  - Helmet
   layers:
   - Default
   - TransparentFX
