@@ -569,6 +569,12 @@ Transform:
   m_Father: {fileID: 1644989191}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &126569888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4494293037414798, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1485292408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &126868211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5471,7 +5477,7 @@ BoxCollider:
   m_GameObject: {fileID: 177391120}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7571,8 +7577,8 @@ Transform:
   m_LocalPosition: {x: 0.32829022, y: 0.254, z: -0.043999974}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.1}
   m_Children: []
-  m_Father: {fileID: 370162379}
-  m_RootOrder: 2
+  m_Father: {fileID: 126569888}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1115445672
 BoxCollider:
@@ -7583,7 +7589,7 @@ BoxCollider:
   m_GameObject: {fileID: 1115445670}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -13128,10 +13134,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366359044}
     m_Modifications:
-    - target: {fileID: 1443488380965344, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
-      propertyPath: m_Name
-      value: Handle
-      objectReference: {fileID: 0}
     - target: {fileID: 4523491787938728, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.32829022
@@ -13175,6 +13177,20 @@ PrefabInstance:
     - target: {fileID: 4523491787938728, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443488380965344, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
+      propertyPath: m_Name
+      value: Handle
       objectReference: {fileID: 0}
     - target: {fileID: 114627923481588256, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
         type: 3}
@@ -13255,16 +13271,6 @@ PrefabInstance:
         type: 3}
       propertyPath: NormalizedValueChanged.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 529239727525876236, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
         type: 3}
@@ -13701,10 +13707,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366359044}
     m_Modifications:
-    - target: {fileID: 1443488380965344, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
-      propertyPath: m_Name
-      value: Handle (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4523491787938728, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.32829022
@@ -13748,6 +13750,20 @@ PrefabInstance:
     - target: {fileID: 4523491787938728, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443488380965344, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9, type: 3}
+      propertyPath: m_Name
+      value: Handle (1)
       objectReference: {fileID: 0}
     - target: {fileID: 114627923481588256, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
         type: 3}
@@ -13828,16 +13844,6 @@ PrefabInstance:
         type: 3}
       propertyPath: NormalizedValueChanged.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54290088492459356, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 529239727525876236, guid: ea9a0c3b69bf0544cb97b07fe9dcffc9,
         type: 3}
