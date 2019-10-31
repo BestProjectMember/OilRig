@@ -8,39 +8,52 @@ using Zinnia.Data.Type;
 public class Toolbox : MonoBehaviour
 {
 	public InteractableFacade leftHandFacade;
-	public InteractableFacade righHandFacade;
-	public RotationalDriveFacade leftHandDriveFacade;
-	public RotationalDriveFacade rightHandDriveFacade;
-	public RotationalJointDrive leftJointDrive;
-	public RotationalJointDrive rightJointDrive;
+	public InteractableFacade rightHandFacade;
+	public BoxCollider boxCollider;
+	public BoxCollider[] leftHandColliders;
+	public BoxCollider[] rightHandColliders;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+		
     }
 
     // Update is called once per frame
     void Update()
     {
 		//only when users have grabbed both handle, will users be able to open the toolbox
-		if (leftHandFacade.IsGrabbed && righHandFacade.IsGrabbed)
+		if (leftHandFacade.IsGrabbed || rightHandFacade.IsGrabbed)
 		{
-						leftHandDriveFacade.DriveLimit = new FloatRange(-90f, 0f);
-						rightHandDriveFacade.DriveLimit = new FloatRange(0f, 90f);
-			leftHandDriveFacade.enabled = true;
-			rightHandDriveFacade.enabled = true;
-			leftJointDrive.enabled = true;
-			rightJointDrive.enabled = true;
+			boxCollider.enabled = false;
 		}
 		else
 		{
-						leftHandDriveFacade.DriveLimit = new FloatRange(0f, 0f);
-						rightHandDriveFacade.DriveLimit = new FloatRange(0f, 0f);
-			leftHandDriveFacade.enabled = false;
-			rightHandDriveFacade.enabled = false;
-			leftJointDrive.enabled = false;
-			rightJointDrive.enabled = false;
+			boxCollider.enabled = true;
 		}
+
+	/*	if (leftHandFacade.IsTouched && rightHandFacade.IsTouched)
+		{
+			foreach (var i in leftHandColliders){
+				i.enabled = true;
+			}
+
+			foreach(var i in rightHandColliders)
+			{
+				i.enabled = true;
+			}
+		}
+		else
+		{
+			foreach(var i in leftHandColliders)
+			{
+				i.enabled = false;
+			}
+
+			foreach(var i in rightHandColliders)
+			{
+				i.enabled = false;
+			}
+		}*/
     }
 }
