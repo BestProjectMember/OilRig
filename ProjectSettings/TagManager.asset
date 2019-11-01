@@ -10,6 +10,7 @@ TagManager:
   - Water
   - ExplodingBox
   - Helmet
+  - Quest Log
   layers:
   - Default
   - TransparentFX
