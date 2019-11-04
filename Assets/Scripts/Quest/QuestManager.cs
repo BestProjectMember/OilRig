@@ -39,7 +39,7 @@ public class QuestManager : MonoBehaviour
         if (securityCheck == questNumber)
         {
             questList[questNumber].complete();
-            if (questNumber < 8)
+            if (questNumber < questList.Count - 2)
             {
                 questNumber++;
                 lastQuest++;
