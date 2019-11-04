@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ChangePosition : MonoBehaviour
 {
-    public GameObject target;
-
     public void Move(GameObject moveLocation)
     {
-        target.transform.position = moveLocation.transform.position;
+        gameObject.transform.position = moveLocation.transform.position;
     }
 }
