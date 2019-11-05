@@ -1859,8 +1859,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 1216571591}
   lineMaterial: {fileID: 2100000, guid: 236d1f4101b361f478f0b3b7b4249d03, type: 2}
-  arrow: {fileID: 839762618643424808, guid: f25fdba465c14194c82bdeb661ee28d9, type: 3}
-  arrowParent: {fileID: 156164767}
 --- !u!1 &1106761003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,13 +2143,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216571589}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1057965792}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!120 &1216571591
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2159,7 +2157,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216571589}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2202,7 +2200,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.38524628
+        value: 0.72950745
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2243,11 +2241,11 @@ LineRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
+    alignment: 1
     textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
 --- !u!114 &1258404588 stripped
 MonoBehaviour:
