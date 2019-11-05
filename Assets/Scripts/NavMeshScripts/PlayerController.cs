@@ -3,7 +3,6 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    //public Camera cam;
     DrawAgentPath path;
     Transform player;
     public GameObject location;
