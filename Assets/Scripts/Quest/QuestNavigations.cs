@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class QuestNavigations : MonoBehaviour
 {
-    public List<GameObject> locations;
+    public static List<GameObject> locations;
+    public List<GameObject> tempLocations;
     public GameObject questMan;
     public PlayerController pController;
     private int questNumber;
 
     void Start()
     {
-      //  locations = new List<GameObject>();
+        locations = new List<GameObject>();
+        for (int i = 0; i < tempLocations.Count; i++)
+        {
+            locations.Add(tempLocations[i]);
+        }
         questMan = GameObject.Find("Quest board");
         questNumber = questMan.GetComponent<QuestManager>().getQuestNumber();
         print(questNumber);
@@ -25,12 +30,12 @@ public class QuestNavigations : MonoBehaviour
         switch (questNumber)
         {
             case 2:
-                pController.GetComponent<PlayerController>().setLocation(locations[0]);
+                pController.GetComponent<PlayerController>().setLocation(locations[QuestManager.questNumber-2]);
                
                 break;
 
             case 3:
-                pController.GetComponent<PlayerController>().setLocation(locations[1]);
+                pController.GetComponent<PlayerController>().setLocation(locations[QuestManager.questNumber-2]);
 
                 break;
             default:

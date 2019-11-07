@@ -10,13 +10,13 @@ public class QuestManager : MonoBehaviour
     private QuestNavigations navigator;
     
     // Quest Number Counter
-    private int questNumber;
+    public static int questNumber = 2;
     private bool questComplete;
     private int lastQuest;
 
 
     private QuestText questText;
-    bool questStarted;
+    static bool questStarted;
 
     // Language
     public string lang;
@@ -43,7 +43,7 @@ public class QuestManager : MonoBehaviour
         questField5.SetActive(false);
 
         questStarted = false;
-        questNumber = 2;
+
         lastQuest = 2;
         lang = "english";           
        

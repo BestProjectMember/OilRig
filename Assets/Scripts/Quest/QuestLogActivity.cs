@@ -9,7 +9,7 @@ public class QuestLogActivity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        questLog = GameObject.Find("Interactable questlog");
+        questLog = GameObject.Find("Interactable questlog 1");
         questLog.SetActive(false);
         isActive = false;
     }
