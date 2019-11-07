@@ -19,14 +19,18 @@ public class QuestNavigations : MonoBehaviour
         }
         questMan = GameObject.Find("Quest board");
         questNumber = questMan.GetComponent<QuestManager>().getQuestNumber();
-        print(questNumber);
+
+        if (QuestManager.questStarted)
+        {
+            setLocationForQuest();
+        }
 
     }
 
     public void setLocationForQuest()
     {
         print("locations method called");
-        print(locations.Count);
+        print("quest number: " + QuestManager.questNumber);
         switch (questNumber)
         {
             case 2:

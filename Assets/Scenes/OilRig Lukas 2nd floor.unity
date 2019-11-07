@@ -1878,6 +1878,11 @@ PrefabInstance:
       objectReference: {fileID: 1193369080}
     - target: {fileID: 4528181516933645997, guid: 7e6228db11e8e6741bfb3b9f50f5cb73,
         type: 3}
+      propertyPath: tempLocations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528181516933645997, guid: 7e6228db11e8e6741bfb3b9f50f5cb73,
+        type: 3}
       propertyPath: tempLocations.Array.data[0]
       value: 
       objectReference: {fileID: 1813650812}
@@ -1886,6 +1891,11 @@ PrefabInstance:
       propertyPath: pController
       value: 
       objectReference: {fileID: 8403069020869133249}
+    - target: {fileID: 4528181516933645997, guid: 7e6228db11e8e6741bfb3b9f50f5cb73,
+        type: 3}
+      propertyPath: tempLocations.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6228db11e8e6741bfb3b9f50f5cb73, type: 3}
 --- !u!114 &1057965791 stripped

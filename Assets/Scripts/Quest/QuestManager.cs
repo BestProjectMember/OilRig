@@ -16,7 +16,7 @@ public class QuestManager : MonoBehaviour
 
 
     private QuestText questText;
-    static bool questStarted;
+    public static bool questStarted = false;
 
     // Language
     public string lang;
@@ -42,7 +42,6 @@ public class QuestManager : MonoBehaviour
         questField4.SetActive(false);
         questField5.SetActive(false);
 
-        questStarted = false;
 
         lastQuest = 2;
         lang = "english";           
@@ -78,6 +77,8 @@ public class QuestManager : MonoBehaviour
                 lastQuest++;
             }
             ChangeDisplayedQuests(questNumber);
+            navigator.GetComponent<QuestNavigations>().setLocationForQuest();
+
         }
     }
 
