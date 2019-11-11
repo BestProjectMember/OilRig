@@ -1896,6 +1896,11 @@ PrefabInstance:
       propertyPath: tempLocations.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2639609535386626182, guid: 7e6228db11e8e6741bfb3b9f50f5cb73,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6228db11e8e6741bfb3b9f50f5cb73, type: 3}
 --- !u!114 &1057965791 stripped
