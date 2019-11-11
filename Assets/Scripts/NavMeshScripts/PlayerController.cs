@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
     DrawAgentPath path;
     Transform player;
     public GameObject location;
+    bool navigationEnabled = false;
 
     public NavMeshAgent agent;
 
     private void Start()
     {
+        //path.line.gameObject.SetActive(navigationEnabled);
         player = gameObject.GetComponent<Transform>();
         path = gameObject.GetComponent<DrawAgentPath>();
     }
