@@ -9,7 +9,9 @@ public class Toolbox : MonoBehaviour
 {
 	public InteractableFacade leftHandFacade;
 	public InteractableFacade rightHandFacade;
-	public BoxCollider boxCollider;
+	public InteractableFacade handleFacade;
+	public BoxCollider bodyCollider;
+	public Rigidbody rb;
 	public BoxCollider[] leftHandColliders;
 	public BoxCollider[] rightHandColliders;
 
@@ -22,15 +24,16 @@ public class Toolbox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 		//only when users have grabbed both handle, will users be able to open the toolbox
-		if (leftHandFacade.IsGrabbed || rightHandFacade.IsGrabbed)
-		{
-			boxCollider.enabled = false;
-		}
-		else
+	/*	if (!leftHandFacade.IsGrabbed && !rightHandFacade.IsGrabbed &&!handleFacade.IsGrabbed)
 		{
 			boxCollider.enabled = true;
 		}
+		else
+		{
+			boxCollider.enabled = false;
+		}*/
 
 	/*	if (leftHandFacade.IsTouched && rightHandFacade.IsTouched)
 		{
@@ -56,4 +59,5 @@ public class Toolbox : MonoBehaviour
 			}
 		}*/
     }
+
 }

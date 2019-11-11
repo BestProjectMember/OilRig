@@ -6,7 +6,7 @@ public class ChangePosition : MonoBehaviour
 {
     public GameObject target;
 
-    public void Move(GameObject moveLocation)
+    public void Move(Transform moveLocation)
     {
         target.transform.position = moveLocation.transform.position;
     }

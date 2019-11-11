@@ -25,33 +25,35 @@ public class FireExtinguisher : MonoBehaviour
 		foam.transform.position = nozzle.transform.position;
 
 		//if player grabbs the fire extinguisher but looses hand
-		if (!interactableFacade.IsGrabbed && triggerIsPressed)
-		{
-			handleTransform.Rotate(0, 0, -90);
-			foam.Stop();
-			triggerIsPressed = false;
-		}
+				if (!interactableFacade.IsGrabbed && triggerIsPressed)
+				{
+					handleTransform.Rotate(0, 0, -90);
+					foam.Stop();
+					triggerIsPressed = false;
+				}
+
 	}
+
 
 	//if player press the handle
-	public void Active()
-	{
-		if (interactableFacade.IsGrabbed && !triggerIsPressed)
-		{
-			handleTransform.Rotate(0, 0, 90);
-			foam.Play();
-			triggerIsPressed = true;
-		}
-	}
+		public void Active()
+			{
+				if (interactableFacade.IsGrabbed && !triggerIsPressed)
+				{
+					handleTransform.Rotate(0, 0, 90);
+					foam.Play();
+					triggerIsPressed = true;
+				}
+			}
 
-	//if player loose the handle
-	public void Stop()
-	{
-		if (interactableFacade.IsGrabbed && triggerIsPressed)
-		{
-			handleTransform.Rotate(0, 0, -90);
-			foam.Stop();
-			triggerIsPressed = false;
-		}
-	}
+			//if player loose the handle
+			public void Stop()
+			{
+				if (interactableFacade.IsGrabbed && triggerIsPressed)
+				{
+					handleTransform.Rotate(0, 0, -90);
+					foam.Stop();
+					triggerIsPressed = false;
+				}
+			}
 }

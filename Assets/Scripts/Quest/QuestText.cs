@@ -11,7 +11,11 @@ public class QuestText : MonoBehaviour
     void Awake()
     {     
         QuestList = new List<Quest>();
+    }
 
+    public void AddQuestsToList()
+    {
+        print("text added");
         QuestList.Add(
             new Quest(
                 new QuestContent(""),
@@ -28,7 +32,7 @@ public class QuestText : MonoBehaviour
         );
         QuestList.Add(
             new Quest(
-                new QuestContent("Quest 1"),
+                new QuestContent("Go to 1st floor"),
                 new QuestContent("Quest 1 but in Danish"),
                 2
             )
@@ -75,6 +79,5 @@ public class QuestText : MonoBehaviour
                 8
             )
         );
-
     }
 }
