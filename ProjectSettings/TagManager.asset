@@ -11,6 +11,7 @@ TagManager:
   - ExplodingBox
   - Helmet
   - Quest Log
+  - Ground
   layers:
   - Default
   - TransparentFX
