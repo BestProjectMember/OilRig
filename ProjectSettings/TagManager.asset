@@ -10,12 +10,9 @@ TagManager:
   - Water
   - ExplodingBox
   - Helmet
-<<<<<<< HEAD
   - Hand
   - Floor
-=======
   - Quest Log
->>>>>>> 4e229b44c1ae9188a625c7fa9154e9ab70f8ea60
   layers:
   - Default
   - TransparentFX
