@@ -10,6 +10,8 @@ TagManager:
   - Water
   - ExplodingBox
   - Helmet
+  - Hand
+  - Floor
   - Quest Log
   - Ground
   layers:
