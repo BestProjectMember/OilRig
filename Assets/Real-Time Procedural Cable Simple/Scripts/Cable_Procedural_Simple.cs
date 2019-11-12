@@ -27,6 +27,7 @@ public class Cable_Procedural_Simple : MonoBehaviour {
 	[SerializeField] float swayFrequency = 1;
 
 
+
 	//These are used later for calculations
 	Vector3 vectorFromStartToEnd;
 	Vector3 sagDirection;
@@ -35,7 +36,6 @@ public class Cable_Procedural_Simple : MonoBehaviour {
 	void Start () 
 	{
 		line = GetComponent<LineRenderer>();
-
 		line.positionCount = pointsInLineRenderer;
 
 		//The Direction of SAG is the direction of gravity
@@ -44,15 +44,13 @@ public class Cable_Procedural_Simple : MonoBehaviour {
 		//Start animation at random times
 		swayValue = Random.Range(0, 3.14f);
 	}
-	
-
 
 	void Update () 
 	{
 		Animate();
 	}
 
-	void Animate()
+    void Animate()
 	{
 		if(!endPointTransform)
 		{
