@@ -5,13 +5,13 @@ using UnityEngine;
 public class QuestLogActivity : MonoBehaviour
 {
      GameObject questLog;
-    bool isActive;
+    public bool active;
     // Start is called before the first frame update
     void Start()
     {
-        questLog = GameObject.Find("Interactable questlog 1");
+        questLog = GameObject.Find("Quest board");
         questLog.SetActive(false);
-        isActive = false;
+        active = false;
     }
 
     void Update()
@@ -23,5 +23,6 @@ public class QuestLogActivity : MonoBehaviour
     public void enableQuestLog()
     {
         questLog.SetActive(!questLog.activeInHierarchy);
+        active = !active;
     }
 }

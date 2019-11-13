@@ -6,9 +6,7 @@ public class QuestNavigations : MonoBehaviour
 {
     public static List<GameObject> locations;
     public List<GameObject> tempLocations;
-    public GameObject questMan;
     public PlayerController pController;
-    private int questNumber;
 
     void Awake()
     {
@@ -17,20 +15,12 @@ public class QuestNavigations : MonoBehaviour
         {
             locations.Add(tempLocations[i]);
         }
-        questMan = GameObject.Find("Quest board");
-        questNumber = questMan.GetComponent<QuestManager>().getQuestNumber();
-
-        if (QuestManager.questStarted)
-        {
-            setLocationForQuest();
-        }
 
     }
 
     public void setLocationForQuest()
     {
-        print("locations method called");
-        print("quest number: " + QuestManager.questNumber);
+
         switch (QuestManager.questNumber)
         {
             case 2:

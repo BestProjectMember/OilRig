@@ -5,17 +5,15 @@ using UnityEngine;
 public class Quest
 {
     public QuestContent english;
-    public QuestContent danish;
     public int number;
 
     public bool isEnglish;
 
     private bool completed = false;
 
-    public Quest(QuestContent english, QuestContent danish, int number)
+    public Quest(QuestContent english, int number)
     {
         this.english = english;
-        this.danish = danish;
         this.number = number;
         isEnglish = false;
     }

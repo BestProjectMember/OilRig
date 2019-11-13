@@ -8,18 +8,17 @@ public class QuestManager : MonoBehaviour
     private List<Quest> questList;
 
     private QuestNavigations navigator;
+
+    private QuestLogActivity logActivity;
     
     // Quest Number Counter
     public static int questNumber = 2;
     private bool questComplete;
-    private int lastQuest;
+    private static int lastQuest= 2;
 
 
     private QuestText questText;
     public static bool questStarted = false;
-
-    // Language
-    public string lang;
 
     // Text Fields
     public GameObject questField1;
@@ -35,23 +34,34 @@ public class QuestManager : MonoBehaviour
         questList = GetComponent<QuestText>().QuestList;
         questText = GetComponent<QuestText>();
         navigator = FindObjectOfType<QuestNavigations>();
+        logActivity = GetComponent<QuestLogActivity>();
 
-        questField1.SetActive(false);
-        questField2.SetActive(false);
-        questField3.SetActive(false);
-        questField4.SetActive(false);
-        questField5.SetActive(false);
-
-       
-
-        lastQuest = 2;
-        lang = "english";           
-       
+        if (questStarted)
+        {
+            navigator.GetComponent<QuestNavigations>().setLocationForQuest();
+            startText.SetActive(false);
+            questField1.SetActive(true);
+            questField2.SetActive(true);
+            questField3.SetActive(true);
+            questField4.SetActive(true);
+            questField5.SetActive(true);
+            questText.AddQuestsToList();
+            ChangeDisplayedQuests(questNumber);
+        }
+        else
+        {
+            questField1.SetActive(false);
+            questField2.SetActive(false);
+            questField3.SetActive(false);
+            questField4.SetActive(false);
+            questField5.SetActive(false);
+        }
+        print(logActivity.active);
     }
 
     public void startQuest()
     {
-        if (!questStarted) {
+        if (!questStarted && logActivity.active) {
             questStarted = true;
             navigator.GetComponent<QuestNavigations>().setLocationForQuest();
             startText.SetActive(false);
@@ -83,50 +93,14 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void ChangeLanguage(string language)
-    {
-
-        if (language == "english")
-        {
-            for (int i = 0; i < questList.Count; i++)
-            {
-                questList[questNumber].ChangeLanguageToEnglish();
-            }
-
-            lang = "english";
-            ChangeDisplayedQuests(questNumber);
-        }
-        if (language == "danish")
-        {
-            for (int i = 0; i < questList.Count; i++)
-            {
-                questList[questNumber].ChangeLanguageToDanish();
-            }
-
-            lang = "danish";
-            ChangeDisplayedQuests(questNumber);
-        }
-    }
 
     void ChangeDisplayedQuests(int number)
     {
-
-        if (lang == "english")
-        {
               questField1.GetComponent<Text>().text = questList[questNumber - 2].english.description;
               questField2.GetComponent<Text>().text = questList[questNumber - 1].english.description;
               questField3.GetComponent<Text>().text = questList[questNumber].english.description;
               questField4.GetComponent<Text>().text = questList[questNumber + 1].english.description;
               questField5.GetComponent<Text>().text = questList[questNumber + 2].english.description;
-        }
-        if (lang == "danish")
-        {
-             questField1.GetComponent<Text>().text = GetComponent<QuestText>().QuestList[questNumber - 2].danish.description;
-             questField2.GetComponent<Text>().text = GetComponent<QuestText>().QuestList[questNumber - 1].danish.description;
-             questField3.GetComponent<Text>().text = GetComponent<QuestText>().QuestList[questNumber].danish.description;
-             questField4.GetComponent<Text>().text = GetComponent<QuestText>().QuestList[questNumber + 1].danish.description;
-             questField5.GetComponent<Text>().text = GetComponent<QuestText>().QuestList[questNumber + 2].danish.description;
-        }
     }
 
     public int getQuestNumber()
