@@ -14,12 +14,6 @@ public class QuestLogActivity : MonoBehaviour
         active = false;
     }
 
-    void Update()
-    {
-       
-       
-    }
-
     public void enableQuestLog()
     {
         questLog.SetActive(!questLog.activeInHierarchy);

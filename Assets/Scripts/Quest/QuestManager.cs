@@ -56,7 +56,6 @@ public class QuestManager : MonoBehaviour
             questField4.SetActive(false);
             questField5.SetActive(false);
         }
-        print(logActivity.active);
     }
 
     public void startQuest()
