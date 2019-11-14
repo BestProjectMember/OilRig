@@ -13,6 +13,7 @@ public class AddForce : MonoBehaviour
     public GameObject target;
     Vector3 direction;
     public UnityEvent m_MyEvent;
+    public Transform origin;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +36,14 @@ public class AddForce : MonoBehaviour
         }
     }
 
-    void Slide()
+    public void Slide()
     {
-        direction.x = target.transform.position.x - transform.position.x;
-        direction.z = target.transform.position.z - transform.position.z;
-        rb.AddForce(direction * force * Time.deltaTime, ForceMode.Impulse);
+        if(target != null)
+        {
+            direction.x = target.transform.position.x - transform.position.x;
+            direction.z = target.transform.position.z - transform.position.z;
+            rb.AddForce(direction * force * Time.deltaTime, ForceMode.Impulse);
+        }
+
     }
 }
