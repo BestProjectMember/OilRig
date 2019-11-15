@@ -8,18 +8,18 @@ using UnityEngine.Events;
 
 public class AddForce : MonoBehaviour
 {
+    public GameObject origin;
     Rigidbody rb;
     public float force;
     public GameObject target;
     Vector3 direction;
     public UnityEvent m_MyEvent;
-    public Transform origin;
 
     // Start is called before the first frame update
     void Start()
     {
         direction = new Vector3();
-        rb = GetComponent<Rigidbody>();
+        rb = origin.GetComponent<Rigidbody>();
 
         if (m_MyEvent == null)
             m_MyEvent = new UnityEvent();
@@ -40,8 +40,8 @@ public class AddForce : MonoBehaviour
     {
         if(target != null)
         {
-            direction.x = target.transform.position.x - transform.position.x;
-            direction.z = target.transform.position.z - transform.position.z;
+            direction.x = target.transform.position.x - origin.transform.position.x;
+            direction.z = target.transform.position.z - origin.transform.position.z;
             rb.AddForce(direction * force * Time.deltaTime, ForceMode.Impulse);
         }
 
