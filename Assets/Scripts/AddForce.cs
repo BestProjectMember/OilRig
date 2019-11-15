@@ -1,19 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Malimbe.BehaviourStateRequirementMethod;
-using Zinnia.Extension;
-using Zinnia.Data.Type;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class AddForce : MonoBehaviour
 {
     public GameObject origin;
+    public Transform cam;
     Rigidbody rb;
     public float force;
     public GameObject target;
     Vector3 direction;
-    public UnityEvent m_MyEvent;
+    public GroundCheck check;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +16,6 @@ public class AddForce : MonoBehaviour
         direction = new Vector3();
         rb = origin.GetComponent<Rigidbody>();
 
-        if (m_MyEvent == null)
-            m_MyEvent = new UnityEvent();
-
-        m_MyEvent.AddListener(Slide);
     }
 
     // Update is called once per frame
@@ -32,7 +23,7 @@ public class AddForce : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            m_MyEvent.Invoke();
+            stopSlide();
         }
     }
 
@@ -40,10 +31,21 @@ public class AddForce : MonoBehaviour
     {
         if(target != null)
         {
-            direction.x = target.transform.position.x - origin.transform.position.x;
-            direction.z = target.transform.position.z - origin.transform.position.z;
-            rb.AddForce(direction * force * Time.deltaTime, ForceMode.Impulse);
+            check.Cast();
+            if(check.floorType == "Oily")
+            {
+                direction.x = target.transform.position.x - cam.transform.position.x;
+                direction.z = target.transform.position.z - cam.transform.position.z;
+                rb.AddForce(direction * force * Time.deltaTime, ForceMode.Impulse);
+            }
+
         }
 
+    }
+
+    public void stopSlide()
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
