@@ -8,7 +8,8 @@ public class AddForce : MonoBehaviour
     public float force;
     public GameObject target;
     Vector3 direction;
-    public GroundCheck check;
+    public GroundCheck groundCheckRight;
+    public GroundCheck groundCheckLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,9 @@ public class AddForce : MonoBehaviour
     {
         if(target != null)
         {
-            check.Cast();
-            if(check.floorType == "Oily")
+            groundCheckRight.Cast();
+            groundCheckLeft.Cast();
+            if(groundCheckRight.floorType == "Oily" || groundCheckLeft.floorType == "Oily")
             {
                 direction.x = target.transform.position.x - cam.transform.position.x;
                 direction.z = target.transform.position.z - cam.transform.position.z;
