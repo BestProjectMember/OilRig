@@ -15,6 +15,7 @@ TagManager:
   - Quest Log
   - Ground
   - Oily
+  - Broom
   layers:
   - Default
   - TransparentFX
