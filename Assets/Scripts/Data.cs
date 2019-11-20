@@ -9,11 +9,11 @@ public class Data : MonoBehaviour
 
     public GameObject lookForData;
 
+
+
     // Update is called once per frame
     void Update()
     {
-        x.text = lookForData.transform.position.x.ToString();
-        y.text = lookForData.transform.position.y.ToString();
-        z.text = lookForData.transform.position.z.ToString();
+        y.text = (Mathf.Round(lookForData.transform.rotation.x * 100f)).ToString();
     }
 }
