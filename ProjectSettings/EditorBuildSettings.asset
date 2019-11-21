@@ -8,19 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OilRig Lukas 2nd floor.unity
     guid: a7c826c517320e2499a9dec57bf4a17f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OilRig Lukas 1st floor.unity
     guid: cf6ee5128188a9749a7f2056c4374f7e
   - enabled: 1
     path: Assets/Scenes/OilRig Peipei.unity
     guid: 4f229398c89706243af62469ee5eea7a
-  - enabled: 1
-    path: Assets/Scenes/OilRig D 2nd floor.unity
-    guid: 1a11a55a885caf947903dc0fcb90c0f2
-  - enabled: 1
-    path: Assets/Scenes/OilRig D 1st floor.unity
-    guid: 85c12c97ad380024782ba6d702b15a0c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/OilRig LockerRoom.unity
+    guid: 9560347a2c4ab954d9bc1196976d54ce
   m_configObjects: {}
