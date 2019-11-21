@@ -13,8 +13,6 @@ public class QuestManager : MonoBehaviour
     
     // Quest Number Counter
     public static int questNumber = 2;
-    private bool questComplete;
-    private static int lastQuest= 2;
 
 
     private QuestText questText;
@@ -84,7 +82,6 @@ public class QuestManager : MonoBehaviour
             if (questNumber < questList.Count - 2)
             {
                 questNumber++;
-                lastQuest++;
             }
             ChangeDisplayedQuests(questNumber);
             navigator.GetComponent<QuestNavigations>().setLocationForQuest();
@@ -102,9 +99,5 @@ public class QuestManager : MonoBehaviour
               questField5.GetComponent<Text>().text = questList[questNumber + 2].english.description;
     }
 
-    public int getQuestNumber()
-    {
-        return questNumber;
-    }
 }
 
