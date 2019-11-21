@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OilRig Peipei.unity
     guid: 4f229398c89706243af62469ee5eea7a
-  - enabled: 1
-    path: Assets/Scenes/OilRig D 2nd floor.unity
-    guid: 1a11a55a885caf947903dc0fcb90c0f2
-  - enabled: 1
-    path: Assets/Scenes/OilRig D 1st floor.unity
-    guid: 85c12c97ad380024782ba6d702b15a0c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
