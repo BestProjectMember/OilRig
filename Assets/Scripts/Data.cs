@@ -14,6 +14,17 @@ public class Data : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        y.text = (Mathf.Round(lookForData.transform.rotation.x * 100f)).ToString();
+        y.text = (Mathf.Round(lookForData.transform.rotation.y * 100f)).ToString();
+    }
+
+    public void greenText()
+    {
+        y.color = Color.green;
+    }
+
+
+    public void blackText()
+    {
+        y.color = Color.black;
     }
 }

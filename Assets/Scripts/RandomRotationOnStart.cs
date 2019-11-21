@@ -12,6 +12,6 @@ public class RandomRotationOnStart : MonoBehaviour
     void Start()
     {
         rand = Random.Range(minAngle, maxAngle);
-        gameObject.transform.rotation = Quaternion.Euler(rand, 0, 0);
+        gameObject.transform.rotation = Quaternion.Euler(0, rand, 0);
     }
 }
