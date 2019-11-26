@@ -16,6 +16,7 @@ TagManager:
   - Ground
   - Oily
   - Broom
+  - BentPipe
   layers:
   - Default
   - TransparentFX

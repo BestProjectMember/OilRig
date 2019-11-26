@@ -30,7 +30,8 @@ public class Fire : MonoBehaviour
 	{
 		if (gameObject.transform.localScale.x > 0)
 		{
-			StartCoroutine("PutOut");
+			//			StartCoroutine("PutOut");
+			gameObject.transform.localScale += new Vector3(-0.1f, -0.1f, -0.1f);
 		}
 
 		if(gameObject.transform.localScale.x <= 0 && !haveSmoked)
@@ -40,7 +41,7 @@ public class Fire : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter(Collider other)
+/*	private void OnTriggerEnter(Collider other)
 	{
 		if (gameObject.transform.localScale.x > 0)
 		{
@@ -52,7 +53,7 @@ public class Fire : MonoBehaviour
 			StartCoroutine("Smoke");
 			haveSmoked = true;
 		}
-	}
+	}*/
 
 	IEnumerator PutOut()
 	{
@@ -73,5 +74,6 @@ public class Fire : MonoBehaviour
 		yield return new WaitForSeconds(5f);
 		smoke.Stop();
 		objectThrowable = true;
+		gameObject.SetActive(false);
 	}
 }

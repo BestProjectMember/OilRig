@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Broom : MonoBehaviour
+public class Hammer : MonoBehaviour
 {
+    public Unbend unbend;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Oily")
+        if (other.gameObject.tag == "BentPipe")
         {
-            other.gameObject.SetActive(false);
+            unbend.UnbendAnim();
         }
     }
 }
