@@ -31,7 +31,7 @@ public class Fire : MonoBehaviour
 		if (gameObject.transform.localScale.x > 0)
 		{
 			//			StartCoroutine("PutOut");
-			gameObject.transform.localScale += new Vector3(-0.1f, -0.1f, -0.1f);
+			gameObject.transform.localScale += new Vector3(-0.01f, -0.01f, -0.01f);
 		}
 
 		if(gameObject.transform.localScale.x <= 0 && !haveSmoked)
@@ -70,6 +70,7 @@ public class Fire : MonoBehaviour
 
 	IEnumerator Smoke()
 	{
+		fire.Stop();
 		smoke.Play();
 		yield return new WaitForSeconds(5f);
 		smoke.Stop();
