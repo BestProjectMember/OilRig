@@ -9,32 +9,32 @@ public class Fire : MonoBehaviour
 	public GameObject burningObject;
 	private bool haveSmoked;
 	public bool objectThrowable;
-	public ParticleSystem fire;
-	private float particleSize = 1;
+	private ParticleSystem fire;
 
     // Start is called before the first frame update
     void Start()
     {
 		haveSmoked = false;
 		objectThrowable = false;
+		fire = gameObject.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
 		
-		gameObject.transform.position = new Vector3(burningObject.transform.position.x + 2f, burningObject.transform.position.y, burningObject.transform.position.z + 0.2f);
+		gameObject.transform.position = new Vector3(burningObject.transform.position.x + 2f, burningObject.transform.position.y + 0.3f, burningObject.transform.position.z + 0.2f);
     }
 
 	void OnParticleCollision(GameObject other)
 	{
-		if (gameObject.transform.localScale.x > 0)
+		if (gameObject.transform.localScale.x > 0.021)
 		{
 			//			StartCoroutine("PutOut");
 			gameObject.transform.localScale += new Vector3(-0.01f, -0.01f, -0.01f);
 		}
 
-		if(gameObject.transform.localScale.x <= 0 && !haveSmoked)
+		if(gameObject.transform.localScale.x <= 0.021 && !haveSmoked)
 		{
 			StartCoroutine("Smoke");
 			haveSmoked = true;
