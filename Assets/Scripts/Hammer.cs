@@ -15,13 +15,12 @@ public class Hammer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
         if(other.tag == "BentPipe")
         {
-            print("HAHA");
             for (int i = 0; i < joints.Length; i++)
             {
-                joints[i].localRotation = Quaternion.Euler(0, ((joints[i].localRotation.eulerAngles.y) - (joints[i].localRotation.eulerAngles.y / 100 * percentage)), 0);
+                if(joints[i].localRotation.eulerAngles.y != 0)
+                    joints[i].localRotation = Quaternion.Euler(0, ((joints[i].localRotation.eulerAngles.y) - (joints[i].localRotation.eulerAngles.y / 100 * percentage)), 0);
             }
         }
     }
