@@ -17,6 +17,7 @@ TagManager:
   - Oily
   - Broom
   - BentPipe
+  - InvalidTeleportLocationTag
   layers:
   - Default
   - TransparentFX
@@ -33,8 +34,8 @@ TagManager:
   - 1st Floor
   - Oil
   - Ground
-  - 
-  - 
+  - Chain wall
+  - Chain
   - 
   - 
   - 
