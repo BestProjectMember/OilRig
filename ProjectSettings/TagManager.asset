@@ -18,6 +18,7 @@ TagManager:
   - Broom
   - BentPipe
   - InvalidTeleportLocationTag
+  - Wall chain
   layers:
   - Default
   - TransparentFX
