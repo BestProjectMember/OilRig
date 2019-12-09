@@ -25,9 +25,11 @@ public class GroundCheck : MonoBehaviour
     public void CastPhysical()
     {
         RaycastHit hit;
+        print(floorType);
         if (Physics.Raycast(transform.position, -transform.up, out hit, range, mask))
         {
             floorType = hit.transform.tag;
+            
         }
     }
 
