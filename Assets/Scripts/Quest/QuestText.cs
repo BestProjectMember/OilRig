@@ -6,69 +6,128 @@ public class QuestText : MonoBehaviour
 {
     // Quest List
     public List<Quest> QuestList;
+    public List<Quest> MainQuestList;
 
     // Start is called before the first frame update
     void Awake()
     {     
         QuestList = new List<Quest>();
+        MainQuestList = new List<Quest>();
     }
+
+
 
     public void AddQuestsToList()
     {
-
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Attach chain"),
+                0));
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Adjust valve"),
+                1));
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Bent pipe"),
+                2));
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Clean oil"),
+                3));
         QuestList.Add(
             new Quest(
                 new QuestContent(""),
-                0
-            )
-        );
-        QuestList.Add(
-            new Quest(
-                new QuestContent(""),
-                1
-            )
-        );
-        QuestList.Add(
-            new Quest(
-                new QuestContent("Go to 1st floor"),
-                2
-            )
-        );
-        QuestList.Add(
-            new Quest(
-                new QuestContent("Go to fire floor"),
-                3
-            )
-        );
-        QuestList.Add(
-            new Quest(
-                new QuestContent("Quest 3"),
                 4
             )
         );
         QuestList.Add(
             new Quest(
-                new QuestContent("Quest 4"),
-                5
+                new QuestContent(""),
+               5
             )
         );
+
         QuestList.Add(
             new Quest(
-                new QuestContent("Quest 5"),
+                new QuestContent("Go to the chain"),
                 6
             )
         );
         QuestList.Add(
-             new Quest(
-                 new QuestContent(""),
-                 7
-             )
-         );
+            new Quest(
+                new QuestContent("Attach the chain"),
+                7
+            )
+        );
         QuestList.Add(
             new Quest(
-                new QuestContent(""),
+                new QuestContent("Go to 1st floor"),
                 8
             )
         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Go to locker room"),
+                 9
+             )
+         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Adjust valve"),
+                 10
+             )
+         );
+
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Go to the pipe"),
+                11
+             )
+         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Pick up the hammer"),
+                 12
+             )
+         );
+
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Straighten the pipe"),
+                 13
+             )
+         );
+
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Go to the oily surface"),
+                 14
+             )
+         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Pick up the broom"),
+                 15
+             )
+         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Clean the oil"),
+                 16
+             )
+         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent(""),
+                 17
+             )
+         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent(""),
+                 18
+             )
+         );
     }
 }

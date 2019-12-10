@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class QuestManager : MonoBehaviour
 {
     private List<Quest> questList;
+    private List<Quest> mainQuestList;
 
     private QuestNavigations navigator;
 
@@ -13,12 +14,14 @@ public class QuestManager : MonoBehaviour
     
     // Quest Number Counter
     public static int questNumber = 2;
+    public static int mainQuestNumber = 0;
 
 
     private QuestText questText;
     public static bool questStarted = false;
 
     // Text Fields
+    public GameObject questFieldMain;
     public GameObject questField1;
     public GameObject questField2;
     public GameObject questField3;
@@ -30,6 +33,7 @@ public class QuestManager : MonoBehaviour
     void Awake()
     {
         questList = GetComponent<QuestText>().QuestList;
+        mainQuestList = GetComponent<QuestText>().MainQuestList;
         questText = GetComponent<QuestText>();
         navigator = FindObjectOfType<QuestNavigations>();
         logActivity = GetComponent<QuestLogActivity>();
@@ -38,6 +42,7 @@ public class QuestManager : MonoBehaviour
         {
             navigator.GetComponent<QuestNavigations>().setLocationForQuest();
             startText.SetActive(false);
+            questFieldMain.SetActive(true);
             questField1.SetActive(true);
             questField2.SetActive(true);
             questField3.SetActive(true);
@@ -45,9 +50,11 @@ public class QuestManager : MonoBehaviour
             questField5.SetActive(true);
             questText.AddQuestsToList();
             ChangeDisplayedQuests(questNumber);
+            ChangeDisplayMainQuests(mainQuestNumber);
         }
         else
         {
+            questFieldMain.SetActive(false);
             questField1.SetActive(false);
             questField2.SetActive(false);
             questField3.SetActive(false);
@@ -62,6 +69,7 @@ public class QuestManager : MonoBehaviour
             questStarted = true;
             navigator.GetComponent<QuestNavigations>().setLocationForQuest();
             startText.SetActive(false);
+            questFieldMain.SetActive(true);
             questField1.SetActive(true);
             questField2.SetActive(true);
             questField3.SetActive(true);
@@ -69,6 +77,7 @@ public class QuestManager : MonoBehaviour
             questField5.SetActive(true);
             questText.AddQuestsToList();
             ChangeDisplayedQuests(questNumber);
+            ChangeDisplayMainQuests(mainQuestNumber);
         }
         
         
@@ -89,6 +98,24 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public void CompleteMainQuest(int securityCheck)
+    {
+        if (securityCheck == mainQuestNumber)
+        {
+            mainQuestList[mainQuestNumber].complete();
+            if (mainQuestNumber < mainQuestList.Count)
+            {
+                mainQuestNumber++;
+            }
+            ChangeDisplayMainQuests(mainQuestNumber);
+        }
+    }
+
+    void ChangeDisplayMainQuests(int number)
+    {
+        questFieldMain.GetComponent<Text>().text = mainQuestList[mainQuestNumber].english.description;
+    }
+
 
     void ChangeDisplayedQuests(int number)
     {
@@ -97,6 +124,16 @@ public class QuestManager : MonoBehaviour
               questField3.GetComponent<Text>().text = questList[questNumber].english.description;
               questField4.GetComponent<Text>().text = questList[questNumber + 1].english.description;
               questField5.GetComponent<Text>().text = questList[questNumber + 2].english.description;
+    }
+
+    public void CompleteQuestTest()
+    {
+        CompleteQuest(questNumber);
+    }
+
+    public void CompleteMainQuesttest()
+    {
+        CompleteMainQuest(mainQuestNumber);
     }
 
 }

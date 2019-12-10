@@ -23,7 +23,7 @@ public class QuestNavigations : MonoBehaviour
 
         switch (QuestManager.questNumber)
         {
-            case 2:
+          /*  case 2:
                 pController.GetComponent<PlayerController>().setLocation(locations[QuestManager.questNumber-2]);
                
                 break;
@@ -35,7 +35,7 @@ public class QuestNavigations : MonoBehaviour
                 break;
             default:
                 pController.GetComponent<PlayerController>().setLocation(null);
-                break;
+                break; */
         }
     }
 }
