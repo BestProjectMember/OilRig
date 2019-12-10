@@ -2317,6 +2317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oil
       objectReference: {fileID: 0}
+    - target: {fileID: 7657255799412456035, guid: 2502e97e79fd7a24c83a483445edb1cd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 7657255799412456063, guid: 2502e97e79fd7a24c83a483445edb1cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2325,7 +2330,7 @@ PrefabInstance:
     - target: {fileID: 7657255799412456063, guid: 2502e97e79fd7a24c83a483445edb1cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.011025108
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7657255799412456063, guid: 2502e97e79fd7a24c83a483445edb1cd,
         type: 3}
@@ -2385,7 +2390,7 @@ PrefabInstance:
     - target: {fileID: 7657255799412456063, guid: 2502e97e79fd7a24c83a483445edb1cd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.4785628
+      value: 2.7849133
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2502e97e79fd7a24c83a483445edb1cd, type: 3}

@@ -9,27 +9,12 @@ public class GroundCheck : MonoBehaviour
     [HideInInspector]
     public string floorType;
 
-    public void Cast()
-    {
-        if(gameObject.active == true)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, -transform.forward, out hit, range, mask))
-            {
-                floorType = hit.transform.tag;
-            }
-        }
-
-    }
-
     public void CastPhysical()
     {
         RaycastHit hit;
-        print(floorType);
         if (Physics.Raycast(transform.position, -transform.up, out hit, range, mask))
         {
             floorType = hit.transform.tag;
-            
         }
     }
 
