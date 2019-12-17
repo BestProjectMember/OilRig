@@ -15,27 +15,10 @@ public class QuestNavigations : MonoBehaviour
         {
             locations.Add(tempLocations[i]);
         }
-
     }
 
     public void setLocationForQuest()
     {
-
-        switch (QuestManager.questNumber)
-        {
-          /*  case 2:
-                pController.GetComponent<PlayerController>().setLocation(locations[QuestManager.questNumber-2]);
-               
-                break;
-
-            case 3:
-                pController.GetComponent<PlayerController>().setLocation(locations[QuestManager.questNumber-2]);
-                
-
-                break;
-            default:
-                pController.GetComponent<PlayerController>().setLocation(null);
-                break; */
-        }
+        pController.GetComponent<PlayerController>().setLocation(locations[QuestManager.mainQuestNumber - 1]);
     }
 }

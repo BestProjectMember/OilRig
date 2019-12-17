@@ -14,7 +14,7 @@ public class QuestManager : MonoBehaviour
     
     // Quest Number Counter
     public static int questNumber = 2;
-    public static int mainQuestNumber = 0;
+    public static int mainQuestNumber = 1;
 
 
     private QuestText questText;
@@ -93,8 +93,6 @@ public class QuestManager : MonoBehaviour
                 questNumber++;
             }
             ChangeDisplayedQuests(questNumber);
-            navigator.GetComponent<QuestNavigations>().setLocationForQuest();
-
         }
     }
 
@@ -102,12 +100,14 @@ public class QuestManager : MonoBehaviour
     {
         if (securityCheck == mainQuestNumber)
         {
+            Debug.Log(mainQuestNumber);
             mainQuestList[mainQuestNumber].complete();
             if (mainQuestNumber < mainQuestList.Count)
             {
                 mainQuestNumber++;
             }
             ChangeDisplayMainQuests(mainQuestNumber);
+            navigator.GetComponent<QuestNavigations>().setLocationForQuest();
         }
     }
 
@@ -133,6 +133,7 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteMainQuesttest()
     {
+        
         CompleteMainQuest(mainQuestNumber);
     }
 

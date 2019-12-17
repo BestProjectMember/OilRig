@@ -15,30 +15,32 @@ public class QuestText : MonoBehaviour
         MainQuestList = new List<Quest>();
     }
 
-
-
     public void AddQuestsToList()
     {
         MainQuestList.Add(
             new Quest(
-                new QuestContent("Attach chain"),
+                new QuestContent(" "),
                 0));
         MainQuestList.Add(
             new Quest(
-                new QuestContent("Adjust valve"),
+                new QuestContent("Attach chain"),
                 1));
         MainQuestList.Add(
             new Quest(
-                new QuestContent("Bent pipe"),
+                new QuestContent("Adjust valve"),
                 2));
         MainQuestList.Add(
             new Quest(
-                new QuestContent("Clean oil"),
+                new QuestContent("Bent pipe"),
                 3));
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Clean oil"),
+                4));
         QuestList.Add(
             new Quest(
                 new QuestContent(""),
-                4
+                5
             )
         );
         QuestList.Add(
