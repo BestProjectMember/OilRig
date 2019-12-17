@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     public GameObject location;
     bool navigationEnabled = false;
 
-    public NavMeshAgent agent;
-
     private void Start()
     {
         //path.line.gameObject.SetActive(navigationEnabled);

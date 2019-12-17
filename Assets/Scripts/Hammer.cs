@@ -21,7 +21,7 @@ public class Hammer : MonoBehaviour
         {
             for (int i = 0; i < joints.Length; i++)
             {
-                if(joints[i].localRotation.eulerAngles.y != 0)
+                if(joints[i].localRotation.eulerAngles.y >= 2)
                     joints[i].localRotation = Quaternion.Euler(0, ((joints[i].localRotation.eulerAngles.y) - (joints[i].localRotation.eulerAngles.y / 100 * percentage)), 0);
                 else
                 {

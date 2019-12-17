@@ -63,6 +63,25 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (!questStarted && logActivity.active)
+        {
+            questStarted = true;
+            navigator.GetComponent<QuestNavigations>().setLocationForQuest();
+            startText.SetActive(false);
+            questFieldMain.SetActive(true);
+            questField1.SetActive(true);
+            questField2.SetActive(true);
+            questField3.SetActive(true);
+            questField4.SetActive(true);
+            questField5.SetActive(true);
+            questText.AddQuestsToList();
+            ChangeDisplayedQuests(questNumber);
+            ChangeDisplayMainQuests(mainQuestNumber);
+        }
+    }
+
     public void startQuest()
     {
         if (!questStarted && logActivity.active) {
@@ -100,7 +119,6 @@ public class QuestManager : MonoBehaviour
     {
         if (securityCheck == mainQuestNumber)
         {
-            Debug.Log(mainQuestNumber);
             mainQuestList[mainQuestNumber].complete();
             if (mainQuestNumber < mainQuestList.Count)
             {

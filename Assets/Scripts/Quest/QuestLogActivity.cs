@@ -18,6 +18,5 @@ public class QuestLogActivity : MonoBehaviour
     {
         questLog.SetActive(!questLog.activeInHierarchy);
         active = !active;
-        print(QuestManager.questNumber);
     }
 }

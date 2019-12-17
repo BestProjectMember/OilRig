@@ -15,10 +15,6 @@ public class PlayerSlip : MonoBehaviour
     {
         check.CastPhysical();
 
-        if(check.floorType != "Ground")
-            print(check.floorType);
-
-        print(toSlide);
         if(check.floorType == "Oily" && toSlide < 1)
         {
             toSlide++;

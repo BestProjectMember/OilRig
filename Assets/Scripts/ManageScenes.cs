@@ -10,9 +10,9 @@ public class ManageScenes : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void printstuff()
+    public void printt()
     {
-        print("I KNOW WHAT YOU DID LAST SUMMER");
+        print("PICKED");
     }
 }
 

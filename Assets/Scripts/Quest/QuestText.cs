@@ -74,54 +74,55 @@ public class QuestText : MonoBehaviour
                  9
              )
          );
+
+        QuestList.Add(
+             new Quest(
+                 new QuestContent("Go to the valve"),
+                 10
+             )
+         );
         QuestList.Add(
              new Quest(
                  new QuestContent("Adjust valve"),
-                 10
+                 11
              )
          );
 
         QuestList.Add(
              new Quest(
                  new QuestContent("Go to the pipe"),
-                11
+                12
              )
          );
         QuestList.Add(
              new Quest(
                  new QuestContent("Pick up the hammer"),
-                 12
-             )
-         );
-
-        QuestList.Add(
-             new Quest(
-                 new QuestContent("Straighten the pipe"),
                  13
              )
          );
 
         QuestList.Add(
              new Quest(
-                 new QuestContent("Go to the oily surface"),
+                 new QuestContent("Straighten the pipe"),
                  14
              )
          );
+
         QuestList.Add(
              new Quest(
-                 new QuestContent("Pick up the broom"),
+                 new QuestContent("Go to the oily surface"),
                  15
              )
          );
         QuestList.Add(
              new Quest(
-                 new QuestContent("Clean the oil"),
+                 new QuestContent("Pick up the broom"),
                  16
              )
          );
         QuestList.Add(
              new Quest(
-                 new QuestContent(""),
+                 new QuestContent("Clean the oil"),
                  17
              )
          );
@@ -129,6 +130,12 @@ public class QuestText : MonoBehaviour
              new Quest(
                  new QuestContent(""),
                  18
+             )
+         );
+        QuestList.Add(
+             new Quest(
+                 new QuestContent(""),
+                 19
              )
          );
     }

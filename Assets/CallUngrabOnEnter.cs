@@ -10,7 +10,7 @@ public class CallUngrabOnEnter : MonoBehaviour
     {
         if(col.tag == "Wall chain")
         {
-        ungrabber.ungrab();
+            ungrabber.ungrab();
         }
     }
 }

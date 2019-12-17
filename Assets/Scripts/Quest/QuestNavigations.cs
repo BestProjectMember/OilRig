@@ -19,6 +19,7 @@ public class QuestNavigations : MonoBehaviour
 
     public void setLocationForQuest()
     {
+        print(QuestManager.mainQuestNumber-1);
         pController.GetComponent<PlayerController>().setLocation(locations[QuestManager.mainQuestNumber - 1]);
     }
 }
