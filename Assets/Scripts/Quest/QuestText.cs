@@ -13,6 +13,7 @@ public class QuestText : MonoBehaviour
     {     
         QuestList = new List<Quest>();
         MainQuestList = new List<Quest>();
+        AddQuestsToList();
     }
 
     public void AddQuestsToList()
@@ -37,16 +38,35 @@ public class QuestText : MonoBehaviour
             new Quest(
                 new QuestContent("Clean oil"),
                 4));
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Put on a helmet"),
+                5));
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Put out fire"),
+                6));
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("Replace burnt material"),
+                7));
+
+        MainQuestList.Add(
+            new Quest(
+                new QuestContent("COMPLETED"),
+                8));
+
+
         QuestList.Add(
             new Quest(
                 new QuestContent(""),
-                5
+                9
             )
         );
         QuestList.Add(
             new Quest(
                 new QuestContent(""),
-               5
+               10
             )
         );
 
@@ -83,7 +103,7 @@ public class QuestText : MonoBehaviour
          );
         QuestList.Add(
              new Quest(
-                 new QuestContent("Adjust valve"),
+                 new QuestContent("Adjust valve to 0"),
                  11
              )
          );
@@ -127,15 +147,51 @@ public class QuestText : MonoBehaviour
              )
          );
         QuestList.Add(
+        new Quest(
+            new QuestContent("Go to fire scene"),
+            18
+        )
+    );
+        QuestList.Add(
+           new Quest(
+               new QuestContent("Put on a helmet"),
+               19
+           )
+       );
+        QuestList.Add(
+          new Quest(
+              new QuestContent("Pick up fire extinguisher"),
+              20
+          )
+      );
+        QuestList.Add(
+          new Quest(
+              new QuestContent("Put out fire"),
+              21
+          )
+      );
+        QuestList.Add(
+        new Quest(
+            new QuestContent("Replace burnt object"),
+            22
+        )
+    );
+        QuestList.Add(
              new Quest(
-                 new QuestContent(""),
-                 18
+                 new QuestContent("COMPLETED"),
+                 23
              )
          );
         QuestList.Add(
+      new Quest(
+          new QuestContent(""),
+          24
+      )
+  );
+        QuestList.Add(
              new Quest(
                  new QuestContent(""),
-                 19
+                 25
              )
          );
     }

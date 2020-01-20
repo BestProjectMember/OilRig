@@ -10,9 +10,5 @@ public class ManageScenes : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void printt()
-    {
-        print("PICKED");
-    }
 }
 

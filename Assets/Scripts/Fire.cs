@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Fire : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Fire : MonoBehaviour
 	private bool haveSmoked;
 	public bool objectThrowable;
 	private ParticleSystem fire;
+    public UnityEvent onFireOut;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,10 @@ public class Fire : MonoBehaviour
 		haveSmoked = false;
 		objectThrowable = false;
 		fire = gameObject.GetComponent<ParticleSystem>();
+        if(onFireOut == null)
+        {
+            onFireOut = new UnityEvent();
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +43,7 @@ public class Fire : MonoBehaviour
 		if(gameObject.transform.localScale.x <= 0.021 && !haveSmoked)
 		{
 			StartCoroutine("Smoke");
+            onFireOut.Invoke();
 			haveSmoked = true;
 		}
 	}

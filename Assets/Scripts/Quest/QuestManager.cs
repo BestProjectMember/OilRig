@@ -11,7 +11,7 @@ public class QuestManager : MonoBehaviour
     private QuestNavigations navigator;
 
     private QuestLogActivity logActivity;
-    
+
     // Quest Number Counter
     public static int questNumber = 2;
     public static int mainQuestNumber = 1;
@@ -30,11 +30,11 @@ public class QuestManager : MonoBehaviour
     public GameObject startText;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        questList = GetComponent<QuestText>().QuestList;
-        mainQuestList = GetComponent<QuestText>().MainQuestList;
         questText = GetComponent<QuestText>();
+        questList = questText.QuestList;
+        mainQuestList = questText.MainQuestList;
         navigator = FindObjectOfType<QuestNavigations>();
         logActivity = GetComponent<QuestLogActivity>();
 
@@ -61,9 +61,12 @@ public class QuestManager : MonoBehaviour
             questField4.SetActive(false);
             questField5.SetActive(false);
         }
+        StartQuest();
     }
+    
 
-    private void Start()
+
+    public void StartQuest()
     {
         if (!questStarted && logActivity.active)
         {
@@ -80,30 +83,11 @@ public class QuestManager : MonoBehaviour
             ChangeDisplayedQuests(questNumber);
             ChangeDisplayMainQuests(mainQuestNumber);
         }
-    }
 
-    public void startQuest()
-    {
-        if (!questStarted && logActivity.active) {
-            questStarted = true;
-            navigator.GetComponent<QuestNavigations>().setLocationForQuest();
-            startText.SetActive(false);
-            questFieldMain.SetActive(true);
-            questField1.SetActive(true);
-            questField2.SetActive(true);
-            questField3.SetActive(true);
-            questField4.SetActive(true);
-            questField5.SetActive(true);
-            questText.AddQuestsToList();
-            ChangeDisplayedQuests(questNumber);
-            ChangeDisplayMainQuests(mainQuestNumber);
-        }
-        
-        
+
     }
     public void CompleteQuest(int securityCheck)
     {
-        print("quest completed");
         if (securityCheck == questNumber)
         {
             questList[questNumber].complete();
@@ -137,23 +121,24 @@ public class QuestManager : MonoBehaviour
 
     void ChangeDisplayedQuests(int number)
     {
-              questField1.GetComponent<Text>().text = questList[questNumber - 2].english.description;
-              questField2.GetComponent<Text>().text = questList[questNumber - 1].english.description;
-              questField3.GetComponent<Text>().text = questList[questNumber].english.description;
-              questField4.GetComponent<Text>().text = questList[questNumber + 1].english.description;
-              questField5.GetComponent<Text>().text = questList[questNumber + 2].english.description;
+        questField1.GetComponent<Text>().text = questNumber.ToString();
+        questField1.GetComponent<Text>().text = questList[questNumber - 2].english.description;
+        questField2.GetComponent<Text>().text = questList[questNumber - 1].english.description;
+        questField3.GetComponent<Text>().text = questList[questNumber].english.description;
+        questField4.GetComponent<Text>().text = questList[questNumber + 1].english.description;
+        questField5.GetComponent<Text>().text = questList[questNumber + 2].english.description;
     }
 
-    public void CompleteQuestTest()
-    {
-        CompleteQuest(questNumber);
-    }
+    //public void CompleteQuestTest()
+    //{
+    //    CompleteQuest(questNumber);
+    //}
 
-    public void CompleteMainQuesttest()
-    {
-        
-        CompleteMainQuest(mainQuestNumber);
-    }
+    //public void CompleteMainQuesttest()
+    //{
+
+    //    CompleteMainQuest(mainQuestNumber);
+    //}
 
 }
 
